@@ -110,15 +110,19 @@ namespace MyBeerTap.Model.Data
         /// <summary>
         ///Update Beer Tap 
         /// </summary>
-        public Tap UpdateTap(Tap tap)
+        public Tap UpdateTap( Tap tap)
         {
 
             _dbContext = new BeerTapDBContext();
+            Tap t = _dbContext.Taps.Where(o => o.Id == tap.Id).Include("Keg").FirstOrDefault();
+            t.Label = tap.Label;
+            t.OfficeId = tap.OfficeId;
+            t.Keg = tap.Keg;
 
-            _dbContext.Entry(tap).State = System.Data.Entity.EntityState.Modified;
-            _dbContext.Kegs.Add(tap.Keg);
+            _dbContext.Entry(t).State = System.Data.Entity.EntityState.Modified;
+          
             _dbContext.SaveChanges();
-            return _dbContext.Taps.Where(o => o.Id == tap.Id).Include("Keg").FirstOrDefault(); 
+            return tap; 
         }
 
         /// <summary>
@@ -137,11 +141,11 @@ namespace MyBeerTap.Model.Data
         /// <summary>
         ///Remove a tap
         /// </summary>
-        public void RemoveTap(Tap tap)
+        public void RemoveTap(int tapId)
         {
 
             _dbContext = new BeerTapDBContext();
-
+            Tap tap = _dbContext.Taps.Where(o => o.Id == tapId).FirstOrDefault();
             _dbContext.Entry(tap).State = System.Data.Entity.EntityState.Deleted;
             _dbContext.SaveChanges();
 
@@ -191,14 +195,15 @@ namespace MyBeerTap.Model.Data
         /// <summary>
         ///Update Keg details
         /// </summary>
-        public Keg UpdateKeg(Keg keg)
+        public Keg UpdateKeg( int tapId)
         {
             _dbContext = new BeerTapDBContext();
-
+           Keg keg = _dbContext.Kegs.Where(k => k.TapId == tapId).FirstOrDefault();
+            keg.TapId = null;
             _dbContext.SaveChanges();
-            return _dbContext.Kegs.Where(o => o.Id == keg.Id).FirstOrDefault();
+            return keg;
 
- 
+
         }
 
         /// <summary>

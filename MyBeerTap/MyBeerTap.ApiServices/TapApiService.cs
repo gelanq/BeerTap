@@ -37,7 +37,7 @@ namespace MyBeerTap.ApiServices
         {
             _repository = new BeeerTapRepository();
 
-            return   Task.FromResult(_repository.UpdateTap(resource));
+            return   Task.FromResult(_repository.UpdateTap( resource));
 
       
         }
@@ -68,7 +68,12 @@ namespace MyBeerTap.ApiServices
         public Task DeleteAsync(ResourceOrIdentifier<Tap, int> input, IRequestContext context, CancellationToken cancellation)
         {
             _repository = new BeeerTapRepository();
-            _repository.RemoveTap(input.Resource);
+            var tapId = context.UriParameters.GetByName<int>("Id").EnsureValue(() => context.CreateHttpResponseException<Tap>("The officeId must be supplied in the URI", HttpStatusCode.BadRequest));
+
+             
+ 
+           _repository.UpdateKeg(tapId);
+           _repository.RemoveTap(tapId);
             return Task.FromResult<Tap>(null);
 
         }
