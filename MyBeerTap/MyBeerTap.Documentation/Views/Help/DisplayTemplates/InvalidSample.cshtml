@@ -1,0 +1,11 @@
+@using IQ.Platform.Framework.WebApi.HelpGen.SampleGeneration
+@model IQ.Platform.Framework.WebApi.HelpGen.SampleGeneration.InvalidSample
+
+@if (HttpContext.Current.IsDebuggingEnabled)
+{
+    <pre class="wrapped ui-state-error">@Model.ErrorMessage</pre>
+}
+else
+{
+    <p>Sample not available.</p>
+}

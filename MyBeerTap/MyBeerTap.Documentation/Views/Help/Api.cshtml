@@ -1,0 +1,120 @@
+﻿@using System.Web.Mvc.Html
+@using IQ.Platform.Framework.WebApi.Model.Hypermedia
+
+@model IQ.Platform.Framework.WebApi.HelpGen.Model.HelpPageApiModel
+@{
+	var description = Model.ApiDescription;
+	ViewBag.Title = string.Format("{0} - {1}", description.ApiName, description.SpecName);
+	bool hasRequestSamples = Model.SampleRequests.Count > 0;
+	bool hasResponseSamples = Model.SampleResponses.Count > 0;
+}
+<div id="body">
+	<section class="featured">
+        <div class="content-wrapper">
+            <p>
+                @Html.ActionLink("Help Page Index", "Index")             
+            </p>
+        </div>
+    </section>
+	<section class="content-wrapper main-content clear-fix">
+        
+		<p><h2>Resource: @description.SpecName</h2></p>
+		<p>@description.SpecDescription</p>
+		
+		<p><h2>Fields</h2></p>
+		<table class="box-table-a">
+			<thead><tr>
+				<th scope="col">Field</th>
+				<th scope="col">Type</th>
+				<th scope="col">Description</th>
+				<th scope="col">Filterable</th>
+				<th scope="col">Security Info</th>
+			</tr></thead>
+			
+			@foreach (var field in @description.Fields)
+			{
+				<tr>
+					<td>@field.FieldName</td>
+					<td>@field.FieldType</td>
+					<td>@field.Description</td>
+					<td>@field.Filterable</td>
+					<td>@field.SecurityStatement</td>
+				</tr>
+			}
+		</table>
+		
+		<p><h2>States</h2></p>
+		@if (description.StateExplanation != null)
+  { 
+			<p>@description.StateExplanation</p>
+  }
+		<table id="States" class="box-table-a">
+			<thead>
+				<tr><th scope="col">State</th><th scope="col">Description</th></tr>
+			</thead>
+			<tbody>
+			@foreach (var state in @description.States)
+			{
+				if (state.StateType == typeof(NullState))
+				{<tr>
+				 	<td><b>Not a stateful resource</b></td>
+				 	<td></td>
+				 </tr> }
+				else
+				{
+					<tr>
+						<td><b>@state.State</b></td>
+						<td>@state.Description</td>
+					</tr>
+				}
+				<tr><td style="vertical-align: top;" class="odd">Hypermedia:</td>
+				<td class="odd">
+					<table id="linksDescr" class="box-table-b">
+						<thead><tr>
+							   	<th scope="col">Relation</th>
+							   	<th scope="col">Link</th>
+							   	<th scope="col">Resource</th>
+							   </tr></thead>
+						<tbody>
+							@foreach (var link in @state.ResourceLinkDescriptions)
+							{
+								<tr>
+									<td>@link.Relation</td>
+									<td>@link.Template</td>
+									<td><a href="@Url.Action("Api", "Help", new { apiId = link.LinkResourceType.Name })">@link.LinkResourceType.Name</a></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+		
+		<p><h2>Examples</h2></p>
+		@if (hasRequestSamples)
+  {
+			@*<h3>Request Information</h3>*@
+            <h3>Request body formats</h3>
+            @Html.DisplayFor(apiModel => apiModel.SampleRequests, "Samples", new { sampleClass = "request" })
+  }
+		
+		@if (hasResponseSamples)
+  {      
+			@*<h3>Response Information</h3> *@
+			<h3>Response body formats</h3>
+			@Html.DisplayFor(apiModel => apiModel.SampleResponses, "Samples", new { sampleClass = "response" })
+  }
+	</section>
+</div>
+@section scripts {
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+	<link type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/smoothness/jquery-ui.css"
+		rel="stylesheet" />
+	<script>
+		$(function () {
+			$('.mediaTypeTabs').tabs();
+		});
+	</script>
+}

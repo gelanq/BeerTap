@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BD4668A-6FD1-434D-8213-7E01797DB838}</ProjectGuid>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyBeerTap.Documentation</RootNamespace>
+    <AssemblyName>MyBeerTap.Documentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.Common, Version=3.22.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.Common.3.22.1\lib\portable-win+net40+sl50+wp80\IQ.Platform.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi, Version=3.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.3.18.0\lib\net45\IQ.Platform.Framework.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.HelpGen, Version=3.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.HelpGen.3.0.7\lib\net45\IQ.Platform.Framework.WebApi.HelpGen.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.Model, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.Model.3.8.0\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\IQ.Platform.Framework.WebApi.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Hypermedia.Mapping, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Hypermedia.Mapping.1.2.1\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\IQ.Platform.Hypermedia.Mapping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Hypermedia.Serialization, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.3.18.0\lib\net45\IQ.Platform.Hypermedia.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.22.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoFixture.3.22.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\HelpPageConfig.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
+    <Compile Include="HelpPageAreaRegistration.cs" />
+    <Compile Include="Installers\HelpControllerInstaller.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="css\HelpPage.css" />
+    <EmbeddedResource Include="img\iQWallpaper_16x9_LogoTopRight_Light.jpg" />
+    <EmbeddedResource Include="Views\Help\Api.cshtml" />
+    <EmbeddedResource Include="Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <EmbeddedResource Include="Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <EmbeddedResource Include="Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <EmbeddedResource Include="Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <EmbeddedResource Include="Views\Help\DisplayTemplates\Samples.cshtml" />
+    <EmbeddedResource Include="Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <EmbeddedResource Include="Views\Help\Index.cshtml" />
+    <EmbeddedResource Include="Views\Shared\_Layout.cshtml" />
+    <EmbeddedResource Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Castle.Core.dll" />
+    <Content Include="bin\Debug\Castle.Core.xml" />
+    <Content Include="bin\Debug\Castle.Windsor.dll" />
+    <Content Include="bin\Debug\Castle.Windsor.xml" />
+    <Content Include="bin\Debug\de\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\de\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\es\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\fr\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.Common.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.HelpGen.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.Model.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.Model.xml" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.xml" />
+    <Content Include="bin\Debug\IQ.Platform.Hypermedia.Mapping.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Hypermedia.Serialization.dll" />
+    <Content Include="bin\Debug\it\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\it\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\ja\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\ko\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.Edm.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.Edm.xml" />
+    <Content Include="bin\Debug\Microsoft.Data.OData.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.OData.xml" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Debug\MyBeerTap.Documentation.dll" />
+    <Content Include="bin\Debug\MyBeerTap.Documentation.pdb" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\Ploeh.AutoFixture.dll" />
+    <Content Include="bin\Debug\Ploeh.AutoFixture.xml" />
+    <Content Include="bin\Debug\ru\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\ru\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Extensions.xml" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\Debug\System.Net.Http.Primitives.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Primitives.xml" />
+    <Content Include="bin\Debug\System.Reactive.Core.dll" />
+    <Content Include="bin\Debug\System.Reactive.Core.xml" />
+    <Content Include="bin\Debug\System.Reactive.Interfaces.dll" />
+    <Content Include="bin\Debug\System.Reactive.Interfaces.xml" />
+    <Content Include="bin\Debug\System.Reactive.Linq.dll" />
+    <Content Include="bin\Debug\System.Reactive.Linq.xml" />
+    <Content Include="bin\Debug\System.Reactive.PlatformServices.dll" />
+    <Content Include="bin\Debug\System.Reactive.PlatformServices.xml" />
+    <Content Include="bin\Debug\System.Spatial.dll" />
+    <Content Include="bin\Debug\System.Spatial.xml" />
+    <Content Include="bin\Debug\System.Web.Helpers.dll" />
+    <Content Include="bin\Debug\System.Web.Helpers.xml" />
+    <Content Include="bin\Debug\System.Web.Http.dll" />
+    <Content Include="bin\Debug\System.Web.Http.OData.dll" />
+    <Content Include="bin\Debug\System.Web.Http.OData.xml" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\Debug\System.Web.Http.xml" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.xml" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.xml" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\zh-Hans\System.Spatial.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\Microsoft.Data.OData.resources.dll" />
+    <Content Include="bin\Debug\zh-Hant\System.Spatial.resources.dll" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\MyBeerTap.Documentation.dll.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

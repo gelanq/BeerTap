@@ -1,0 +1,67 @@
+﻿@using System.Linq
+@using System.Web.Mvc.Html
+@using MyBeerTap.Documentation
+@model System.Collections.ObjectModel.Collection<IQ.Platform.Framework.WebApi.HelpGen.iQApiDocumentation>
+<header>
+	<div class="content-wrapper">
+		<div class="float-left">
+			<h1>@ViewBag.Title</h1>
+		</div>
+	</div>
+</header>
+<div id="body">
+	<section class="featured">
+		<div class="content-wrapper">
+			<h2>Introduction</h2>
+			<p>
+				Need to decide what to include in here. Probably a discussion about...
+				<ul>
+					<li>Endpoint address</li>
+					<li>Authentication, api keys, etc</li>
+					<li>Filtering examples and statement about simplicity (only support AND, not OR).  Can't link/drill down into objects, like PO.Customer.Invoices.Taxes</li>
+					<li>OAuth, OData, HAL, other formats and such</li>
+				</ul>
+				
+			</p>
+		</div>
+	</section>
+	<section class="content-wrapper main-content clear-fix">
+		<h2>Resources</h2>
+		<p>The following table lists the available resources in the API.  Select the hyperlink on the resource name to view details about fields, linked resources, states and code samples in various formats.</p>
+		<table id="box-table-a" class="box-table-a">
+			<thead><tr>
+				   	<th scope="col">Name</th>
+				   	<th scope="col">Description</th>
+				   </tr></thead>
+			
+			<tbody>
+				@foreach (var api in Model.OrderBy(o => o.SpecName))
+				{
+		
+					<tr>
+						<td><a href="@Url.Action("Api", "Help", new { apiId = api.SpecName })">@api.SpecName</a></td>
+						<td>
+							@if (api.SpecDescription != null)
+							{
+								<p>@api.SpecDescription</p>
+							}
+							else
+							{
+								<p>No documentation available.</p>
+							}
+						</td>
+					</tr>
+				}
+			</tbody>
+			
+  
+		</table>
+	</section>
+</div>
+@section scripts
+{
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+	<link type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/smoothness/jquery-ui.css"
+		  rel="stylesheet" />
+}
+

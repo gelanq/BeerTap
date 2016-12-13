@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{683A3444-B4FA-4FF2-8308-F3CAD3EC011A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyBeerTap.IntegrationTests</RootNamespace>
+    <AssemblyName>MyBeerTap.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheCow.Common, Version=0.5.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CacheCow.Common.0.5.9\lib\net40\CacheCow.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheCow.Server, Version=0.5.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\CacheCow.Server.0.5.9\lib\net40\CacheCow.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeItEasy, Version=1.24.0.0, Culture=neutral, PublicKeyToken=eff28e2146d5fd2c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FakeItEasy.1.24.0\lib\net40\FakeItEasy.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=3.1.229.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentAssertions.3.1.229\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.1.229.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentAssertions.3.1.229\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FSharp.Core.3.1.2.1\lib\net40\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Auth.OAuth2.AccessTokenFormatting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Auth.OAuth2.AccessTokenFormatting.2.24.0.2084\lib\net40\IQ.Auth.OAuth2.AccessTokenFormatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Auth.OAuth2.ProtectedResource, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Auth.OAuth2.ProtectedResource.2.24.0.2084\lib\net40\IQ.Auth.OAuth2.ProtectedResource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Auth.OAuth2.ProtectedResource.ZeroMQ, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Auth.OAuth2.ProtectedResource.ZeroMQ.2.24.0.2084\lib\net40\IQ.Auth.OAuth2.ProtectedResource.ZeroMQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Auth.OAuth2.ZeroMQ, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Auth.OAuth2.ProtectedResource.ZeroMQ.2.24.0.2084\lib\net40\IQ.Auth.OAuth2.ZeroMQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Foundation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b998e1ab7718321e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Foundation.1.1.0.1498\lib\net40\IQ.Foundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Foundation.Logging.Log4Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Foundation.Logging.Log4Net.1.1.0.1472\lib\net40\IQ.Foundation.Logging.Log4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Foundation.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Foundation.WebApi.1.1.0.1498\lib\net40\IQ.Foundation.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.Common, Version=3.22.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.Common.3.22.1\lib\portable-win+net40+sl50+wp80\IQ.Platform.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.Logging, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.Logging.3.1.0\lib\net45\IQ.Platform.Framework.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi, Version=3.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.3.18.0\lib\net45\IQ.Platform.Framework.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.CorsHelpers, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.CorsHelpers.1.0.5\lib\net45\IQ.Platform.Framework.WebApi.CorsHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.DI.AspNet.Windsor, Version=3.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.DI.AspNet.Windsor.3.7.3\lib\net45\IQ.Platform.Framework.WebApi.DI.AspNet.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.HttpCache, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.HttpCache.3.2.1\lib\net45\IQ.Platform.Framework.WebApi.HttpCache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.Model, Version=3.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.Model.3.8.0\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\IQ.Platform.Framework.WebApi.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Framework.WebApi.Services, Version=3.2.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.Services.3.2.5\lib\net45\IQ.Platform.Framework.WebApi.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Hypermedia.Mapping, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Hypermedia.Mapping.1.2.1\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\IQ.Platform.Hypermedia.Mapping.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IQ.Platform.Hypermedia.Serialization, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Platform.Framework.WebApi.3.18.0\lib\net45\IQ.Platform.Hypermedia.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Log4Mongo, Version=0.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4mongo-net.0.10.0\lib\net40\Log4Mongo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Log4Netly, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Log4Netly.1.0.31\lib\net40\Log4Netly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.8.2.34, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.1.8.2\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.8.2.34, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.1.8.2\lib\net35\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NetMQ, Version=3.3.0.10, Culture=neutral, PublicKeyToken=a6decef4ddc58b3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\IQ.Auth.OAuth2.ProtectedResource.ZeroMQ.2.24.0.2084\lib\net40\NetMQ.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.20.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\AutoFixture.3.20.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit">
+      <HintPath>..\..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContainerTests.cs" />
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\config\log4net.config" />
+    <None Include="bin\Debug\config\Logging.config" />
+    <None Include="bin\Debug\MyBeerTap.IntegrationTests.dll.config" />
+    <None Include="bin\Debug\Web.config" />
+    <None Include="bin\Debug\Web.Debug.config" />
+    <None Include="bin\Debug\Web.Release.config" />
+    <None Include="config\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="config\Logging.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyBeerTap.ApiServices\MyBeerTap.ApiServices.csproj">
+      <Project>{006bc5d6-e8bf-40c9-9c9c-a55685624e43}</Project>
+      <Name>MyBeerTap.ApiServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyBeerTap.Model\MyBeerTap.Model.csproj">
+      <Project>{f1be99c5-041c-4366-9e74-0ad3632a8611}</Project>
+      <Name>MyBeerTap.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyBeerTap.WebApi\MyBeerTap.WebApi.csproj">
+      <Project>{4babd518-15fe-484b-86ad-08595f462df9}</Project>
+      <Name>MyBeerTap.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AutoMapper.dll" />
+    <Content Include="bin\Debug\AutoMapper.Net4.dll" />
+    <Content Include="bin\Debug\AutoMapper.xml" />
+    <Content Include="bin\Debug\bin\Debug\AutoMapper.Net4.dll" />
+    <Content Include="bin\Debug\CacheCow.Common.dll" />
+    <Content Include="bin\Debug\CacheCow.Common.xml" />
+    <Content Include="bin\Debug\CacheCow.Server.dll" />
+    <Content Include="bin\Debug\CacheCow.Server.xml" />
+    <Content Include="bin\Debug\Castle.Core.dll" />
+    <Content Include="bin\Debug\Castle.Core.xml" />
+    <Content Include="bin\Debug\Castle.Windsor.dll" />
+    <Content Include="bin\Debug\Castle.Windsor.xml" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\FakeItEasy.dll" />
+    <Content Include="bin\Debug\FakeItEasy.xml" />
+    <Content Include="bin\Debug\FluentAssertions.Core.dll" />
+    <Content Include="bin\Debug\FluentAssertions.Core.pdb" />
+    <Content Include="bin\Debug\FluentAssertions.Core.xml" />
+    <Content Include="bin\Debug\FluentAssertions.dll" />
+    <Content Include="bin\Debug\FluentAssertions.pdb" />
+    <Content Include="bin\Debug\FluentAssertions.xml" />
+    <Content Include="bin\Debug\FSharp.Core.dll" />
+    <Content Include="bin\Debug\FSharp.Core.xml" />
+    <Content Include="bin\Debug\IQ.Auth.OAuth2.AccessTokenFormatting.dll" />
+    <Content Include="bin\Debug\IQ.Auth.OAuth2.ProtectedResource.dll" />
+    <Content Include="bin\Debug\IQ.Auth.OAuth2.ProtectedResource.ZeroMQ.dll" />
+    <Content Include="bin\Debug\IQ.Auth.OAuth2.ZeroMQ.dll" />
+    <Content Include="bin\Debug\IQ.Foundation.dll" />
+    <Content Include="bin\Debug\IQ.Foundation.Logging.Log4Net.dll" />
+    <Content Include="bin\Debug\IQ.Foundation.WebApi.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.Common.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.Logging.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.CorsHelpers.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.CorsHelpers.xml" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.DI.AspNet.Windsor.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.HelpGen.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.HttpCache.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.Model.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.Model.xml" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.Services.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Framework.WebApi.xml" />
+    <Content Include="bin\Debug\IQ.Platform.Hypermedia.Mapping.dll" />
+    <Content Include="bin\Debug\IQ.Platform.Hypermedia.Serialization.dll" />
+    <Content Include="bin\Debug\Log4Mongo.dll" />
+    <Content Include="bin\Debug\log4net.dll" />
+    <Content Include="bin\Debug\log4net.xml" />
+    <Content Include="bin\Debug\Log4Netly.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.Edm.dll" />
+    <Content Include="bin\Debug\Microsoft.Data.OData.dll" />
+    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Debug\MongoDB.Bson.dll" />
+    <Content Include="bin\Debug\MongoDB.Bson.xml" />
+    <Content Include="bin\Debug\MongoDB.Driver.dll" />
+    <Content Include="bin\Debug\MongoDB.Driver.xml" />
+    <Content Include="bin\Debug\MyBeerTap.ApiServices.dll" />
+    <Content Include="bin\Debug\MyBeerTap.ApiServices.pdb" />
+    <Content Include="bin\Debug\MyBeerTap.Documentation.dll" />
+    <Content Include="bin\Debug\MyBeerTap.Documentation.pdb" />
+    <Content Include="bin\Debug\MyBeerTap.IntegrationTests.dll" />
+    <Content Include="bin\Debug\MyBeerTap.IntegrationTests.pdb" />
+    <Content Include="bin\Debug\MyBeerTap.Model.dll" />
+    <Content Include="bin\Debug\MyBeerTap.Model.pdb" />
+    <Content Include="bin\Debug\MyBeerTap.Model.xml" />
+    <Content Include="bin\Debug\MyBeerTap.WebApi.dll" />
+    <Content Include="bin\Debug\MyBeerTap.WebApi.pdb" />
+    <Content Include="bin\Debug\NetMQ.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\Ploeh.AutoFixture.dll" />
+    <Content Include="bin\Debug\Ploeh.AutoFixture.xml" />
+    <Content Include="bin\Debug\protobuf-net.dll" />
+    <Content Include="bin\Debug\protobuf-net.pdb" />
+    <Content Include="bin\Debug\protobuf-net.xml" />
+    <Content Include="bin\Debug\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Extensions.xml" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\Debug\System.Net.Http.Primitives.dll" />
+    <Content Include="bin\Debug\System.Net.Http.Primitives.xml" />
+    <Content Include="bin\Debug\System.Reactive.Core.dll" />
+    <Content Include="bin\Debug\System.Reactive.Core.xml" />
+    <Content Include="bin\Debug\System.Reactive.Interfaces.dll" />
+    <Content Include="bin\Debug\System.Reactive.Interfaces.xml" />
+    <Content Include="bin\Debug\System.Reactive.Linq.dll" />
+    <Content Include="bin\Debug\System.Reactive.Linq.xml" />
+    <Content Include="bin\Debug\System.Reactive.PlatformServices.dll" />
+    <Content Include="bin\Debug\System.Reactive.PlatformServices.xml" />
+    <Content Include="bin\Debug\System.Web.Http.dll" />
+    <Content Include="bin\Debug\System.Web.Http.OData.dll" />
+    <Content Include="bin\Debug\System.Web.Http.OData.xml" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\Debug\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\Debug\System.Web.Http.xml" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.xml" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.xml" />
+    <Content Include="bin\Debug\xunit.dll" />
+    <Content Include="bin\Debug\xunit.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.20-beta\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
