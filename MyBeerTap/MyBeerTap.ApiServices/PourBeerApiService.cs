@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using IQ.Platform.Framework.Common;
@@ -39,6 +36,7 @@ namespace MyBeerTap.ApiServices
 
             //Add new Glass
             resource.Id = tapId;
+            resource.Glass.TapId = tapId;
             Glass g = _repository.AddGlass(resource.Glass);
 
             //Update the Keg

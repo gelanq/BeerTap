@@ -1,12 +1,8 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web;
 using IQ.Platform.Framework.WebApi.Hypermedia;
 using IQ.Platform.Framework.WebApi.Hypermedia.Specs;
 using IQ.Platform.Framework.WebApi.Model.Hypermedia;
-using MyBeerTap.ApiServices;
 using MyBeerTap.Model;
 
 namespace MyBeerTap.WebApi.Hypermedia
