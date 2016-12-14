@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using IQ.Foundation.Utilities;
+using IQ.Platform.Framework.Common;
 using IQ.Platform.Framework.WebApi;
 using IQ.Platform.Framework.WebApi.Services.Security;
 using MyBeerTap.ApiServices.Security;
@@ -52,11 +54,10 @@ namespace MyBeerTap.ApiServices
         public Task<ResourceCreationResult<Office, int>> CreateAsync(Office resource, IRequestContext context, CancellationToken cancellation)
         {
             _repository = new BeeerTapRepository();
-            Office office = new Office();
-            office = _repository.AddOffice(resource);
+            Office office = _repository.AddOffice(resource);
+ 
 
-
-            return Task.FromResult(new ResourceCreationResult<Office, int>(office));
+            return Task.FromResult(new ResourceCreationResult<Office, int>(resource));
         }
 
         public Task<Office> UpdateAsync(Office resource, IRequestContext context, CancellationToken cancellation)
